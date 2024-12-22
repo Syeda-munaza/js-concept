@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(248, 232, 213);
+}
+h1{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 3rem;
+    box-shadow: 0 0 10px 0 rgb(81, 67, 27);
+    background-color: rgb(45, 122, 166);
+    color: antiquewhite;
+   }
+.accordion {
+    width: 50%;
+    margin: 150px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.item {
+    box-shadow: 0 0 30px 0 rgb(81, 67, 27);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+h2 {
+    font-size: 23px;
+    text-transform: capitalize;
+}
+.number {
+    font-size: 23px;
+}
+.iconOpen,
+.iconClose {
+    color: rgb(21, 111, 133);
+    
+}
+.hidden-box {
+    grid-column: 2 / 3;
+    display: none;
+}
+.active{
+    position: relative;
+}
+.active ::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    border-top: 3px solid #1864ab;
+    animation: borderline 1s linear;
+}
+@keyframes borderline{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.hidden-box p {
+    line-height: 1.4;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 0.1px;
+}
+.hidden-box ul li {
+    line-height: 1.4;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 0.1px;
+    margin-left: 16px;
+}
+.active .hidden-box {
+    display: block;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .accordion {
+        width: 80%;
+    }
+
+    .item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .number {
+        font-size: 20px;
+    }
+
+    .hidden-box p,
+    .hidden-box ul li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .accordion {
+        width: 90%;
+    }
+
+    .item {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .number {
+        font-size: 18px;
+    }
+
+    .hidden-box p,
+    .hidden-box ul li {
+        font-size: 16px;
+    }
+}
